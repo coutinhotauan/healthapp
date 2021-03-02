@@ -1,7 +1,10 @@
 version: '3'
 
 networks:
-   healthnet:
+   default:
+      external:
+         name: healthnet
+         
 
 
 services:
@@ -33,7 +36,7 @@ services:
     ports:
       - 7050:7050
     networks:
-      healthnet:
+      default:
         aliases:
           - orderer.app.com
 
@@ -55,7 +58,7 @@ services:
     volumes:
       - ./crypto-config/peerOrganizations/org1.app.com/ca/:/etc/hyperledger/fabric-ca-server-config
     networks:
-      healthnet:
+      default:
         aliases:
           - ca.org1.app.com
    

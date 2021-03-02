@@ -1,7 +1,9 @@
 version: '3'
 
 networks:
-   healthnet:
+   default:
+      external:
+         name: healthnet
 
 services:
 
@@ -43,7 +45,7 @@ services:
     links:
       - orderer
     networks:
-      healthnet:
+      default:
         aliases:
           - peer0.org1.app.com
 
@@ -85,6 +87,6 @@ services:
     links:
       - orderer
     networks:
-      healthnet:
+      default:
         aliases:
           - peer1.org1.app.com
