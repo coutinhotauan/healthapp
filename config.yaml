@@ -201,9 +201,17 @@ orderers:
 peers:
   peer0.org1.app.com:
     # this URL is used to send endorsement and query requests
-    url: localhost:7051
+    ###################################################################
+    # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:7051            #
+    # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:7051 #
+    ###################################################################
+    url: 192.168.0.194:7051
     # eventUrl is only needed when using eventhub (default is delivery service)
-    eventUrl: localhost:7053
+    ###################################################################
+    # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:7053            #
+    # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:7053 #
+    ###################################################################
+    eventUrl: 192.168.0.194:7053	#localhost:7053
 
     grpcOptions:
       ssl-target-name-override: peer0.org1.app.com
@@ -223,9 +231,17 @@ peers:
 
   peer1.org1.app.com:
     # this URL is used to send endorsement and query requests
-    url: localhost:8051
+    ###################################################################
+    # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:8051            #
+    # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:8051 #
+    ###################################################################
+    url: 192.168.0.194:8051	#localhost:8051
     # eventUrl is only needed when using eventhub (default is delivery service)
-    eventUrl: localhost:8053
+    ###################################################################
+    # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:8053            #
+    # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:8053 #
+    ###################################################################
+    eventUrl: 192.168.0.194:8053	#localhost:8053
 
     grpcOptions:
       ssl-target-name-override: peer1.org1.app.com
@@ -267,41 +283,40 @@ certificateAuthorities:
 entityMatchers:
   peer:
     - pattern: (\w*)peer0.org1.app.com(\w*)
-    	#opcao unico host:
-      #urlSubstitutionExp: localhost:7051
-      #opcao multi host
-      urlSubstitutionExp: peer0.org1.app.com:7051
-      #opcao unico host:
-      #eventUrlSubstitutionExp: localhost:7053
-      eventUrlSubstitutionExp: peer0.org1.app.com:7053
+      ###################################################################
+      # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:7051            #
+      # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:7051 #
+      ###################################################################
+      urlSubstitutionExp: 192.168.0.194:7051
+      ###################################################################
+      # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:7053            #
+      # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:7053 #
+      ###################################################################
+      eventUrlSubstitutionExp: 192.168.0.194:7053
       sslTargetOverrideUrlSubstitutionExp: peer0.org1.app.com
       mappedHost: peer0.org1.app.com
 
     - pattern: (\w*)peer1.org1.app.com(\w*)
-    	#opcao unico host:
-      #urlSubstitutionExp: localhost:8051
-      #opcao multi host
-      urlSubstitutionExp: peer1.org1.app.com:8051
-      #opcao unico host:
-      #eventUrlSubstitutionExp: localhost:8053
-      #opcao multi host:
-      eventUrlSubstitutionExp: peer1.org1.app.com:8053
+      ###################################################################
+      # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:8051            #
+      # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:8051 #
+      ###################################################################
+      urlSubstitutionExp: 192.168.0.194:8051
+      ###################################################################
+      # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:8053            #
+      # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:8053 #
+      ###################################################################
+      eventUrlSubstitutionExp: 192.168.0.194:8053
       sslTargetOverrideUrlSubstitutionExp: peer1.org1.app.com
       mappedHost: peer1.org1.app.com
 
   orderer:
     - pattern: (\w*)orderer.app.com(\w*)
-    	#opcao unico host:
-      #urlSubstitutionExp: grpc://localhost:7050
-      #opcao multi host:
-      urlSubstitutionExp: grpc://orderer.app.com:7050
+      urlSubstitutionExp: grpc://localhost:7050
       sslTargetOverrideUrlSubstitutionExp: orderer.app.com
       mappedHost: orderer.app.com
 
   certificateAuthorities:
     - pattern: (\w*)ca.org1.app.com(\w*)
-    	#opcao unico host:
-      #urlSubstitutionExp: http://localhost:7054
-      #opcao multi host:
-      urlSubstitutionExp: http://ca.org1.app.com:7054
+      urlSubstitutionExp: http://localhost:7054
       mappedHost: ca.org1.app.com
