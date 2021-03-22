@@ -205,13 +205,13 @@ peers:
     # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:7051            #
     # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:7051 #
     ###################################################################
-    url: 192.168.0.194:7051
+    url: localhost:7051
     # eventUrl is only needed when using eventhub (default is delivery service)
     ###################################################################
     # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:7053            #
     # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:7053 #
     ###################################################################
-    eventUrl: 192.168.0.194:7053	#localhost:7053
+    eventUrl: localhost:7053
 
     grpcOptions:
       ssl-target-name-override: peer0.org1.app.com
@@ -235,13 +235,13 @@ peers:
     # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:8051            #
     # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:8051 #
     ###################################################################
-    url: 192.168.0.194:8051	#localhost:8051
+    url: localhost:8051
     # eventUrl is only needed when using eventhub (default is delivery service)
     ###################################################################
     # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:8053            #
     # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:8053 #
     ###################################################################
-    eventUrl: 192.168.0.194:8053	#localhost:8053
+    eventUrl: localhost:8053
 
     grpcOptions:
       ssl-target-name-override: peer1.org1.app.com
@@ -287,12 +287,12 @@ entityMatchers:
       # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:7051            #
       # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:7051 #
       ###################################################################
-      urlSubstitutionExp: 192.168.0.194:7051
+      urlSubstitutionExp: localhost:7051
       ###################################################################
       # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:7053            #
       # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:7053 #
       ###################################################################
-      eventUrlSubstitutionExp: 192.168.0.194:7053
+      eventUrlSubstitutionExp: localhost:7053
       sslTargetOverrideUrlSubstitutionExp: peer0.org1.app.com
       mappedHost: peer0.org1.app.com
 
@@ -301,12 +301,12 @@ entityMatchers:
       # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:8051            #
       # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:8051 #
       ###################################################################
-      urlSubstitutionExp: 192.168.0.194:8051
+      urlSubstitutionExp: localhost:8051
       ###################################################################
       # PARA A SOLUÇÃO EM UNICO HOST UTILIZAR localhost:8053            #
       # PARA A SOLUÇÃO EM MULTI HOST UTILIZAR <INSERIR IP DO HOST>:8053 #
       ###################################################################
-      eventUrlSubstitutionExp: 192.168.0.194:8053
+      eventUrlSubstitutionExp: localhost:8053
       sslTargetOverrideUrlSubstitutionExp: peer1.org1.app.com
       mappedHost: peer1.org1.app.com
 
