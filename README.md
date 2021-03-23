@@ -5,12 +5,15 @@
 <ol>
   <li><a href="#Motivação">Motivação</a></li>
   <li><a href="#Descrição">Descrição</a></li>
-  <li><a href="#Pré-requisitos">Pré-requisitos</a></li>
-  <li><a href="#Clonando o repositório">Clonando o repositório</a></li>
-  <li><a href="#Iniciando a aplicação">Iniciando a aplicação</a></li>
+  <li><a href="#aplicação">Aplicação</a></li>
   <ol>
-    <li><a href="#Único Host">Único Host</a></li>
-    <li><a href="#Multi Host">Multi Host</a></li>
+    <li><a href="#Pré-requisitos">Pré-requisitos</a></li>
+    <li><a href="#clonando-o-repositório">Clonando o repositório</a></li>
+    <li><a href="#iniciando-a-aplicação">Iniciando a aplicação</a></li>
+    <ol>
+      <li><a href="#único-host">Único Host</a></li>
+      <li><a href="#multi-host">Multi Host</a></li>
+    </ol>
   </ol>
   
 </ol>
